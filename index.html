@@ -1,489 +1,341 @@
-<script>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #faf7f2;  /* Warm cream background */
-    color: #2c3e2f;  /* Deep forest green */
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 20px;
-}
-
-/* Header styles */
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.gourmet-link {
-    font-size: 1.5rem;
-    color: #c44536;  /* Terracotta */
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #e6b89c;  /* Warm sand */
-    padding-bottom: 5px;
-}
-
-.gourmet-link:hover {
-    color: #a33b2f;
-}
-
-.tagline {
-    color: #6b4f3c;  /* Warm brown */
-    margin-top: 10px;
-    font-style: italic;
-}
-
-/* Recipe Card */
-.recipe-card {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 500px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    z-index: 1000;
-    animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-    from {
-        top: -100%;
-        opacity: 0;
-    }
-    to {
-        top: 20px;
-        opacity: 1;
-    }
-}
-
-.recipe-card.hidden {
-    display: none;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #6b4f3c;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s;
-}
-
-.close-btn:hover {
-    background-color: #f0e4d5;
-}
-
-.card-content {
-    padding: 30px 20px 20px;
-}
-
-#dishImage {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-#dishTitle {
-    font-size: 1.8rem;
-    color: #2c3e2f;
-    margin-bottom: 5px;
-}
-
-.dish-region {
-    color: #c44536;
-    font-weight: 500;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-#dishDescription {
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.recipe-link {
-    display: inline-block;
-    color: #c44536;
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 2px solid #e6b89c;
-    padding-bottom: 3px;
-    transition: color 0.2s;
-}
-
-.recipe-link:hover {
-    color: #a33b2f;
-}
-
-/* Game Area */
-.game-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    margin: 40px 0;
-}
-
-/* Chicken Container */
-.chicken-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chicken {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.chicken:hover {
-    transform: scale(1.05);
-}
-
-/* Region Circle */
-.region-circle {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.region-btn {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: none;
-    background: #f0e4d5;  /* Warm sand base */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    font-family: inherit;
-}
-
-/* Region-specific colors */
-.region-btn.north { background: #e6b89c; }  /* Warm sand */
-.region-btn.west { background: #c44536; }   /* Terracotta */
-.region-btn.central { background: #6b4f3c; } /* Warm brown */
-.region-btn.east { background: #2c3e2f; }    /* Forest green */
-.region-btn.south { background: #d4a59a; }   /* Dusty rose */
-
-.region-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.region-letter {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-.region-name {
-    font-size: 0.8rem;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #6b4f3c;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #c44536;
-    text-decoration: none;
-    border-bottom: 1px solid #e6b89c;
-}
-
-footer a:hover {
-    color: #a33b2f;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .region-btn {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .region-letter {
-        font-size: 1.5rem;
-    }
-    
-    .region-name {
-        font-size: 0.7rem;
-    }
-    
-    .chicken-container {
-        width: 200px;
-        height: 200px;
-    }
-    
-    #dishTitle {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .region-circle {
-        gap: 8px;
-    }
-    
-    .region-btn {
-        width: 60px;
-        height: 60px;
-    }
-}</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The African Gourmet · Chicken Adventures</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Chicken Across Africa · The African Gourmet Foodways Archive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf7f2;
+            color: #2c3e2f;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin: 0 0 40px;
+        }
+        .gourmet-link {
+            font-size: 1.6rem;
+            color: #c44536;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #e6b89c;
+            padding-bottom: 4px;
+        }
+        .gourmet-link:hover { color: #a33b2f; }
+        .tagline {
+            color: #6b4f3c;
+            margin-top: 8px;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        .recipe-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            margin: 40px auto;
+            max-width: 600px;
+            padding: 24px;
+            display: none;
+        }
+        .recipe-card.active {
+            display: block;
+        }
+        .close-btn {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #6b4f3c;
+            line-height: 1;
+        }
+        .close-btn:hover { color: #c44536; }
+        #dishImage {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 16px 0 20px;
+        }
+        #dishTitle {
+            font-size: 1.9rem;
+            color: #2c3e2f;
+            margin-bottom: 6px;
+        }
+        .dish-region {
+            color: #c44536;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        #dishDescription {
+            margin-bottom: 20px;
+        }
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+            margin: 40px 0 80px;
+        }
+        .chicken-container {
+            width: 260px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chicken {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.25s ease;
+            cursor: pointer;
+        }
+        .chicken:hover { transform: scale(1.04); }
+        .region-circle {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 620px;
+        }
+        .region-btn {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            font-family: inherit;
+        }
+        .region-btn.north { background: #e6b89c; }
+        .region-btn.west  { background: #c44536; }
+        .region-btn.central { background: #6b4f3c; }
+        .region-btn.east { background: #2c3e2f; }
+        .region-btn.south { background: #d4a59a; }
+        .region-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+        .region-letter {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .region-name {
+            font-size: 0.85rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        footer {
+            text-align: center;
+            color: #6b4f3c;
+            font-size: 0.95rem;
+            margin-top: 60px;
+        }
+        @media (max-width: 600px) {
+            .region-btn { width: 90px; height: 90px; }
+            .region-letter { font-size: 1.8rem; }
+            .region-name { font-size: 0.75rem; }
+            .chicken-container { width: 220px; height: 220px; }
+            #dishTitle { font-size: 1.6rem; }
+            .recipe-card { padding: 20px; }
+        }
+        @media (max-width: 400px) {
+            .region-circle { gap: 12px; }
+            .region-btn { width: 80px; height: 80px; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header with link to The African Gourmet -->
         <header>
             <a href="https://www.theafricangourmet.com" target="_blank" class="gourmet-link">
-                The African Gourmet
+                The African Gourmet Foodways Archive
             </a>
-            <p class="tagline">A gentle click-and-learn adventure</p>
+            <p class="tagline">Click a region — discover one iconic chicken dish from the continent</p>
         </header>
 
-        <!-- Recipe Card (hidden by default) -->
-        <div id="recipeCard" class="recipe-card hidden">
-            <button class="close-btn" id="closeCard">✕</button>
-            <div class="card-content">
-                <img id="dishImage" src="" alt="African dish">
-                <h2 id="dishTitle"></h2>
-                <p id="dishRegion" class="dish-region"></p>
-                <p id="dishDescription"></p>
-                <a id="recipeLink" href="#" target="_blank" class="recipe-link">
-                    View Recipe on The African Gourmet →
-                </a>
-            </div>
+        <div id="recipeCard" class="recipe-card" role="dialog" aria-modal="true" aria-labelledby="dishTitle">
+            <button class="close-btn" id="closeCard" aria-label="Close dish details">×</button>
+            <img id="dishImage" src="" alt="" loading="lazy">
+            <h2 id="dishTitle"></h2>
+            <p id="dishRegion" class="dish-region"></p>
+            <p id="dishDescription"></p>
         </div>
 
-        <!-- Main Game Area -->
         <div class="game-area">
-            <!-- Our star! -->
             <div class="chicken-container">
-                <img id="chicken" src="images/chicken-neutral.png" alt="Curious chicken with African print feathers" class="chicken">
+                <img id="chicken" src="images/neutral-chicken.png" alt="Curious chicken in African print feathers" class="chicken">
             </div>
 
-            <!-- Region buttons arranged in a circle -->
             <div class="region-circle">
-                <button class="region-btn north" data-region="north" aria-label="North Africa">
+                <button class="region-btn north" data-region="north" aria-label="Explore North African chicken dish">
                     <span class="region-letter">N</span>
                     <span class="region-name">North</span>
                 </button>
-                <button class="region-btn west" data-region="west" aria-label="West Africa">
+                <button class="region-btn west" data-region="west" aria-label="Explore West African chicken dish">
                     <span class="region-letter">W</span>
                     <span class="region-name">West</span>
                 </button>
-                <button class="region-btn central" data-region="central" aria-label="Central Africa">
+                <button class="region-btn central" data-region="central" aria-label="Explore Central African chicken dish">
                     <span class="region-letter">C</span>
                     <span class="region-name">Central</span>
                 </button>
-                <button class="region-btn east" data-region="east" aria-label="East Africa">
+                <button class="region-btn east" data-region="east" aria-label="Explore East African chicken dish">
                     <span class="region-letter">E</span>
                     <span class="region-name">East</span>
                 </button>
-                <button class="region-btn south" data-region="south" aria-label="Southern Africa">
+                <button class="region-btn south" data-region="south" aria-label="Explore Southern African chicken dish">
                     <span class="region-letter">S</span>
                     <span class="region-name">South</span>
                 </button>
             </div>
         </div>
 
-        <!-- Footer -->
         <footer>
-            <p>Part of <a href="https://www.theafricangourmet.com" target="_blank">The African Gourmet</a> family · Click a region to begin</p>
+            <p>Part of <a href="https://www.theafricangourmet.com" target="_blank">The African Gourmet Foodways Archive</a> · Documenting living food traditions</p>
         </footer>
     </div>
-</body>
-</html> <script>
-// script.js - The African Gourmet Chicken Adventures
 
-// Wait for the page to load
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Get references to elements
-    const chicken = document.getElementById('chicken');
-    const recipeCard = document.getElementById('recipeCard');
-    const closeBtn = document.getElementById('closeCard');
-    const dishImage = document.getElementById('dishImage');
-    const dishTitle = document.getElementById('dishTitle');
-    const dishRegion = document.getElementById('dishRegion');
-    const dishDescription = document.getElementById('dishDescription');
-    const recipeLink = document.getElementById('recipeLink');
-    
-    // Region data - all the delicious details
-    const regions = {
-        north: {
-            name: 'Chicken Tagine',
-            region: 'North Africa (Morocco)',
-            description: 'A slow-cooked stew of chicken with preserved lemons, green olives, and fragrant spices like saffron and cumin. Served with crusty bread or couscous.',
-            image: 'images/dish-north.jpg',
-            recipe: 'https://www.theafricangourmet.com/recipes/chicken-tagine',
-            defaultImage: 'images/dish-north.jpg'
-        },
-        west: {
-            name: 'Chicken Yassa',
-            region: 'West Africa (Senegal/Gambia)',
-            description: 'Tender chicken marinated in onions, lemon juice, and Dijon mustard, then grilled and simmered until caramelized. The national dish of Senegal.',
-            image: 'images/dish-west.jpg',
-            recipe: 'https://www.theafricangourmet.com/recipes/chicken-yassa',
-            defaultImage: 'images/dish-west.jpg'
-        },
-        central: {
-            name: 'Chicken Moambe',
-            region: 'Central Africa (DRC/Angola)',
-            description: 'Rich, creamy chicken stew made with palm butter, garlic, chili, and okra. Often called the national dish of the Democratic Republic of Congo.',
-            image: 'images/dish-central.jpg',
-            recipe: 'https://www.theafricangourmet.com/recipes/chicken-moambe',
-            defaultImage: 'images/dish-central.jpg'
-        },
-        east: {
-            name: 'Doro Wat',
-            region: 'East Africa (Ethiopia)',
-            description: 'A spicy, deep red chicken stew simmered with berbere spice, served with hard-boiled eggs. Ethiopia\'s most famous dish, eaten with injera.',
-            image: 'images/dish-east.jpg',
-            recipe: 'https://www.theafricangourmet.com/recipes/doro-wat',
-            defaultImage: 'images/dish-east.jpg'
-        },
-        south: {
-            name: 'Chicken Bunny Chow',
-            region: 'Southern Africa (South Africa)',
-            description: 'A hollowed-out loaf of bread filled with fragrant chicken curry. Born in the Indian community of Durban, now a South African classic.',
-            image: 'images/dish-south.jpg',
-            recipe: 'https://www.theafricangourmet.com/recipes/bunny-chow',
-            defaultImage: 'images/dish-south.jpg'
-        }
-    };
-    
-    // Function to handle region clicks
-    function showRegionDish(regionKey) {
-        const region = regions[regionKey];
-        if (!region) return;
-        
-        // Chicken looks confused (questioning look)
-        chicken.src = 'images/chicken-confused.png';
-        
-        // Fill the recipe card with data
-        dishImage.src = region.image;
-        dishImage.alt = region.name;
-        dishTitle.textContent = region.name;
-        dishRegion.textContent = region.region;
-        dishDescription.textContent = region.description;
-        recipeLink.href = region.recipe;
-        
-        // Show the card
-        recipeCard.classList.remove('hidden');
-    }
-    
-    // Add click handlers to all region buttons
-    document.querySelectorAll('.region-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const region = this.dataset.region;
-            showRegionDish(region);
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chicken = document.getElementById('chicken');
+            const recipeCard = document.getElementById('recipeCard');
+            const closeBtn = document.getElementById('closeCard');
+            const dishImage = document.getElementById('dishImage');
+            const dishTitle = document.getElementById('dishTitle');
+            const dishRegion = document.getElementById('dishRegion');
+            const dishDescription = document.getElementById('dishDescription');
+
+            let animationTimer = null;
+
+            const regions = {
+                north: {
+                    name: 'Chicken Tagine',
+                    region: 'North Africa — Morocco',
+                    description: 'Slow-simmered chicken with preserved lemon, green olives, saffron, ginger, and cumin. The tagine pot traps moisture and layers aroma — eaten with khobz or couscous. Signature home and street dish.',
+                    image: 'images/north.jpg',
+                    alt: 'Moroccan chicken tagine with preserved lemons, olives, and spices'
+                },
+                west: {
+                    name: 'Chicken Yassa',
+                    region: 'West Africa — Senegal & Gambia',
+                    description: 'Chicken marinated overnight in lemon, lime, mustard, and massive amounts of onions, then grilled and stewed until the onions caramelize into sweet-savory sauce. National pride dish of Senegal.',
+                    image: 'images/west.jpg',
+                    alt: 'Senegalese poulet yassa with caramelized onions and lemon'
+                },
+                central: {
+                    name: 'Poulet Moambé / Moambe',
+                    region: 'Central Africa — DRC, Congo, Angola',
+                    description: 'Chicken cooked in rich red palm nut sauce with garlic, chili, tomato, and often okra or greens. Deep, nutty, slightly tangy — a Sunday or celebration staple across the region.',
+                    image: 'images/central.jpg',
+                    alt: 'Central African chicken moambé in palm nut sauce'
+                },
+                east: {
+                    name: 'Doro Wat',
+                    region: 'East Africa — Ethiopia',
+                    description: 'Intensely spiced chicken stew made with berbere, niter kibbeh, onions, garlic, and ginger. Hard-boiled eggs added near the end. Served on injera — Ethiopia’s festive centerpiece.',
+                    image: 'images/east.jpg',
+                    alt: 'Ethiopian doro wat chicken stew with berbere and eggs'
+                },
+                south: {
+                    name: 'Chicken Bunny Chow',
+                    region: 'Southern Africa — South Africa (Durban)',
+                    description: 'Curry-spiced chicken (often tomato-based with Durban masala) ladled into a hollowed half-loaf of white bread. Street food born in Indian-descended communities, now nationwide.',
+                    image: 'images/south.jpg',
+                    alt: 'South African chicken bunny chow in hollowed bread'
+                }
+            };
+
+            function setChickenState(src) {
+                if (animationTimer) clearTimeout(animationTimer);
+                chicken.src = src;
+            }
+
+            function showDish(regionKey) {
+                const dish = regions[regionKey];
+                if (!dish) return;
+
+                setChickenState('images/questioning-chicken.jpg');
+
+                dishImage.src = dish.image;
+                dishImage.alt = dish.alt;
+                dishTitle.textContent = dish.name;
+                dishRegion.textContent = dish.region;
+                dishDescription.textContent = dish.description;
+
+                recipeCard.classList.add('active');
+                recipeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Focus close button for keyboard users
+                closeBtn.focus();
+            }
+
+            function closeDish() {
+                recipeCard.classList.remove('active');
+                setChickenState('images/happy-chicken.png');
+                animationTimer = setTimeout(() => {
+                    setChickenState('images/neutral-chicken.png');
+                }, 1800);
+            }
+
+            // Region buttons
+            document.querySelectorAll('.region-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showDish(btn.dataset.region);
+                });
+            });
+
+            // Close actions
+            closeBtn.addEventListener('click', closeDish);
+
+            chicken.addEventListener('click', () => {
+                if (recipeCard.classList.contains('active')) {
+                    closeDish();
+                } else {
+                    setChickenState('images/surprised-chicken.png');
+                    animationTimer = setTimeout(() => {
+                        setChickenState('images/neutral-chicken.png');
+                    }, 1200);
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && recipeCard.classList.contains('active')) {
+                    closeDish();
+                }
+            });
+
+            console.log('Africa chicken explorer ready');
         });
-    });
-    
-    // Close button handler
-    closeBtn.addEventListener('click', function() {
-        // Hide the card
-        recipeCard.classList.add('hidden');
-        
-        // Chicken looks happy for a moment, then returns to neutral
-        chicken.src = 'images/chicken-happy.png';
-        
-        setTimeout(function() {
-            chicken.src = 'images/chicken-neutral.png';
-        }, 2000);
-    });
-    
-    // Click on chicken for a little surprise
-    chicken.addEventListener('click', function() {
-        // If card is open, close it
-        if (!recipeCard.classList.contains('hidden')) {
-            recipeCard.classList.add('hidden');
-            chicken.src = 'images/chicken-happy.png';
-            setTimeout(function() {
-                chicken.src = 'images/chicken-neutral.png';
-            }, 2000);
-        } else {
-            // Just a happy reaction if no card
-            chicken.src = 'images/chicken-surprised.png';
-            setTimeout(function() {
-                chicken.src = 'images/chicken-neutral.png';
-            }, 1000);
-        }
-    });
-    
-    // Optional: Click outside card to close (for better UX)
-    document.addEventListener('click', function(event) {
-        if (!recipeCard.classList.contains('hidden') && 
-            !recipeCard.contains(event.target) && 
-            !event.target.classList.contains('region-btn')) {
-            recipeCard.classList.add('hidden');
-            chicken.src = 'images/chicken-happy.png';
-            setTimeout(function() {
-                chicken.src = 'images/chicken-neutral.png';
-            }, 2000);
-        }
-    });
-    
-    console.log('Chicken Adventures is ready! 🐔');
-});</script>
+    </script>
+</body>
+</html>
