@@ -1,6 +1,6 @@
 # Chicken Adventures · The African Gourmet
 
-A gentle click-and-learn game featuring a curious chicken with beautiful colored feathers. Discover chicken dishes from across the African continent by clicking on different regions.
+A gentle click-and-learn game featuring a curious hungry chicken with beautiful colored feathers. Discover chicken dishes from across the African continent by clicking on different regions.
 
 ## About The Game
 
