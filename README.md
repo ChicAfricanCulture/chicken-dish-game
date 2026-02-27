@@ -8,11 +8,11 @@ This is a charming, low-pressure exploration of African cuisine. No timers, no s
 
 ### Features
 
-- 🐔 **A character with personality** - Our chicken has neutral, confused, surprised, and happy expressions
-- 🌍 **Five regions to explore** - North, West, Central, East, and Southern Africa
-- 🍗 **Authentic dishes** - Each region features a signature chicken dish with description and cultural context
-- 🎨 **Beautiful design** - Warm, earthy colors that reflect The African Gourmet brand
-- 📱 **Fully responsive** - Works beautifully on desktop, tablet, and mobile
+- **A character with personality** - Our chicken has neutral, confused, surprised, and happy expressions
+- **Five regions to explore** - North, West, Central, East, and Southern Africa
+- **Authentic dishes** - Each region features a signature chicken dish with description and cultural context
+- **Beautiful design** - Warm, earthy colors that reflect The African Gourmet brand
+- **Fully responsive** - Works beautifully on desktop, tablet, and mobile
 
 ### The Dishes
 
