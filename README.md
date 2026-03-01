@@ -71,4 +71,4 @@ This project is open source. Feel free to learn from it, adapt it, and share it.
         <p>Part of [SankofaKitchen](https://github.com/ChicAfricanCulture) — African foodways retrieved through play  
 [Visit my GitHub profile](https://github.com/ChicAfricanCulture) for more projects</p>
     </div>
-*Created with curiosity and love for [The African Gourmet](https://www.theafricangourmet.com)*
+*Created with curiosity and love by [The African Gourmet](https://www.theafricangourmet.com)*
