@@ -66,5 +66,9 @@ Each ingredient could have its own character with unique expressions!
 This project is open source. Feel free to learn from it, adapt it, and share it.
 
 ---
-
+   <div class="footer">
+        <p>Maintained by <a href="https://www.theafricangourmet.com" style="color: #8B4513;">The African Gourmet</a> · Licensed under CC BY 4.0</p>
+        <p>Part of [SankofaKitchen](https://github.com/ChicAfricanCulture) — African foodways retrieved through play  
+[Visit my GitHub profile](https://github.com/ChicAfricanCulture) for more projects</p>
+    </div>
 *Created with curiosity and love for [The African Gourmet](https://www.theafricangourmet.com)*
