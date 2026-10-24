@@ -1,74 +1,39 @@
-# Chicken Adventures · The African Gourmet
+# Chicken Across Africa
 
-A gentle click-and-learn game featuring a curious hungry chicken with beautiful colored feathers. Discover chicken dishes from across the African continent by clicking on different regions.
+A gentle click-and-learn game with a friendly, colourful chicken. Tap a region of Africa and meet one well-loved chicken dish from it. There are no timers and no scores.
 
-## About The Game
+**▶ Play it here: [https://chicafricanculture.github.io/chicken-dish-game/](https://chicafricanculture.github.io/chicken-dish-game/)**
 
-This is a charming, low-pressure exploration of African cuisine. No timers, no scores—just a friendly chicken guide who reacts with different expressions as you learn about regional dishes.
+A free game from [The African Gourmet](https://www.theafricangourmet.com/), made to help people learn about African food through play.
 
-### Features
+## How to play
 
-- **A character with personality** - Our chicken has neutral, confused, surprised, and happy expressions
-- **Five regions to explore** - North, West, Central, East, and Southern Africa
-- **Authentic dishes** - Each region features a signature chicken dish with description and cultural context
-- **Beautiful design** - Warm, earthy colors that reflect The African Gourmet brand
-- **Fully responsive** - Works beautifully on desktop, tablet, and mobile
+1. Tap one of the region buttons around the chicken: North, West, Central, East or South.
+2. Watch the chicken react.
+3. A card opens with the dish's name, a photo and a short description.
+4. Close the card with the X and pick another region.
 
-### The Dishes
+## The dishes
 
-| Region | Dish | Description |
-|--------|------|-------------|
-| **North Africa** | Chicken Tagine | Slow-cooked Moroccan stew with preserved lemons and olives |
-| **West Africa** | Chicken Yassa | Onion-marinated grilled chicken, Senegal's national dish |
-| **Central Africa** | Chicken Moambe | Rich palm butter stew from the DRC and Angola |
-| **East Africa** | Doro Wat | Spicy Ethiopian chicken stew with berbere and eggs |
-| **Southern Africa** | Chicken Bunny Chow | Durban curry served in a hollowed bread loaf |
+| Region | Dish |
+|---|---|
+| North | Chicken Tagine |
+| West | Chicken Yassa |
+| Central | Poulet Moambé |
+| East | Doro Wat |
+| South | Chicken Bunny Chow |
 
-## How to Play
+## More from The African Gourmet
 
-1. Click any colored region button around the chicken
-2. Watch the chicken's reaction (she gets curious!)
-3. A recipe card appears with the dish name, description, and photo
-4. Click the X or anywhere outside the card to close
-5. The chicken smiles happily, then returns to neutral
+- [More African food stories at The African Gourmet](https://www.theafricangourmet.com/)
+- [More games to play and learn](https://www.theafricangourmet.com/p/play-learn-african-food-games.html)
 
-## Technical Details
-
-This project is built with:
-- HTML5
-- CSS3 (with responsive design)
-- Vanilla JavaScript (no frameworks)
-
-## Part of The African Gourmet Family
-
-This game is part of [The African Gourmet](https://www.theafricangourmet.com) ecosphere—a digital archive dedicated to exploring and preserving African food culture, traditions, and wisdom.
-
-### Other Games in the Collection
-
-- [African Foodways: Odd One Out](https://chicafricanculture.github.io/odd-out-match-game/)
-- [The African Pantry Mahjong](https://chicafricanculture.github.io/The-African-Pantry-Mahjong/)
-- [Adinkra Movers](https://chicafricanculture.github.io/moving-adinkra/)
-- [Adinkra Mahjong](https://chicafricanculture.github.io/Adinkra-Mahjong/)
-- [Taste the Words of Africa](https://chicafricanculture.github.io/african-food-word-puzzle/)
-
-## Future Possibilities
-
-This gentle click-and-learn format can easily expand to include:
-- Goat dishes
-- Vegetable preparations
-- Fruits native to Africa
-- Grains and staples
-
-Each ingredient could have its own character with unique expressions!
-
-## License
+## Licence
 
 This project is open source. Feel free to learn from it, adapt it, and share it.
 
+Licensed under CC BY 4.0.
+
 ---
-   <div class="footer">
-        <p>Maintained by <a href="https://www.theafricangourmet.com" style="color: #8B4513;">The African Gourmet</a> · Licensed under CC BY 4.0</p>
-        <p>Part of [SankofaKitchen](https://github.com/ChicAfricanCulture) — African foodways retrieved through play  
-[Visit my GitHub profile](https://github.com/ChicAfricanCulture) for more projects</p>
-    </div>
-*Created with curiosity and love by [The African Gourmet](https://www.theafricangourmet.com)*
+
+Maintained by [The African Gourmet](https://www.theafricangourmet.com/).
